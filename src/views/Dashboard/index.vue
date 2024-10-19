@@ -11,7 +11,7 @@
         <!-- 底部导航栏 -->
         <div class="footer-nav">
             <div class="nav-container">
-                <div class="arrow-left">
+                <div class="arrow">
                     <img src="@/assets/images/left.png" alt="left" />
                 </div>
                 <div class="nav-btn">
@@ -31,7 +31,7 @@
                         <span class="nav-text">数字化基础</span>
                     </router-link>
                 </div>
-                <div class="arrow-right">
+                <div class="arrow">
                     <img src="@/assets/images/right.png" alt="right" />
                 </div>
 
@@ -126,7 +126,9 @@ export default {
             /* 中间40%的宽度 */
             display: flex;
             justify-content: center;
-
+            .arrow img{
+                height: 100%;
+            }
             .nav-btn {
                 display: flex;
                 justify-content: space-between;
@@ -173,7 +175,7 @@ export default {
                         margin: 0 10px; // 调整激活状态下的边距
 
                         .nav-icon {
-                            width: 150px;
+                            width: 120px;
                             height: 80px;
                             object-fit: cover;
                         }

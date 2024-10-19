@@ -11,24 +11,25 @@
         </div>
 
         <!-- 中间展示区，包裹 transition 动画 -->
-        <transition name="fade" mode="out-in">
-            <div class="center-content" :key="selectedItem.id">
-                <div class="content-left">
-                    <div
-                        style="font-family: Alibaba PuHuiTi; font-weight: bold; font-size: 2vw;color: #59BAF2; line-height: 32px;">
-                        {{ selectedItem.name }}
-                    </div>
-                    <div
-                        style="font-family: Alibaba PuHuiTi;font-weight: 400;font-size: 1vw;color: #FFFFFF;opacity: 0.7;">
-                        {{ selectedItem.description }}
-                    </div>
-                    <div class="bottom-button">进入系统</div>
-                </div>
-                <div class="content-right">
-                    <img :src="selectedItem.image" alt="selected image" class="selected-image" />
-                </div>
+        <div class="center-content" :key="selectedItem.id">
+            <div class="content-title">
+                <div style="font-family: Alibaba PuHuiTi;font-weight: 500;font-size: 3vh;color: rgb(255, 255, 255);line-height: 30px;padding-bottom: 1vh;">
+                    介绍</div>
             </div>
-        </transition>
+            <div class="content-left">
+                <div
+                    style="font-family: Alibaba PuHuiTi; font-weight: bold; font-size: 2vw;color: #59BAF2; line-height: 32px;">
+                    {{ selectedItem.name }}
+                </div>
+                <div style="font-family: Alibaba PuHuiTi;font-weight: 400;font-size: 1vw;color: #FFFFFF;opacity: 0.7;">
+                    {{ selectedItem.description }}
+                </div>
+                <div class="bottom-button">进入系统</div>
+            </div>
+            <div class="content-right">
+                <img :src="selectedItem.image" alt="selected image" class="selected-image" />
+            </div>
+        </div>
 
         <!-- 右侧导航 -->
         <div class="right-side">
@@ -377,5 +378,20 @@ export default {
     height: auto;
     /* max-width: 400px; */
     border-radius: 10px;
+}
+
+.content-title {
+    display: flex;
+    justify-content: center;
+    /* 水平居中 */
+    align-items: center;
+    /* 垂直居中 */
+    position: absolute;
+    top: 17vh;
+    left: 43vw;
+    width: 15vw;
+    height: 6vh;
+    background: url("~@/assets/images/page2/title-bg.png") no-repeat;
+    background-size: 100% 100%;
 }
 </style>
