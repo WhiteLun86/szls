@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'COSTOME PINGFANG';
+  font-display: swap;
+  src: url('./PINGFANG-MEDIUM.TTF') format('truetype')
+}
+
+@font-face{
+  font-family: 'PangMenZhengDao';
+  src: url('./PangMenZhengDao.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Alibaba PuHuiTi';
+  src: url('./ALIBABA-PUHUITI-REGULAR.TTF');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DIN';
+  src: url('./DIN-REGULAR.OTF') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
