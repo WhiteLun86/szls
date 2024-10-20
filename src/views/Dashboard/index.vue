@@ -58,7 +58,7 @@
             <span class="nav-text">数字化基础</span>
           </router-link>
         </div>
-        <div class="arrow" style="margin-left:10px">
+        <div class="arrow" style="margin-left: 10px">
           <img src="@/assets/images/right.png" alt="right" />
         </div>
       </div>
@@ -151,9 +151,13 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
-      .arrow img {
-        height: 100%;
+      .arrow {
+        height: 100% 
+        img {
+          height: 100%;
+        }
       }
+
       .nav-btn {
         display: flex;
         justify-content: space-between;
@@ -165,8 +169,8 @@ export default {
             transform: scale(1.2); // 背景容器增大
           }
           .nav-icon-container {
-            width: 52px;
-            height: 52px;
+            width: 40px;
+            height: 40px;
             margin-bottom: 4px;
 
             .nav-icon {

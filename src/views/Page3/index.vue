@@ -64,7 +64,7 @@
 }
 .left1-arrow {
     position: absolute;
-    top: 17vh;
+    top: 14vh;
     left: 30vw;
     background-size: cover;
     width: 371px;
@@ -110,7 +110,7 @@
 
 .left1 {
     position: absolute;
-    top: 10vh;
+    top: 6vh;
     left: 11vw;
     background: url("~@/assets/images/page3/left1-bg.png") no-repeat center center;
     background-size: cover;
@@ -121,7 +121,7 @@
 
 .left2 {
     position: absolute;
-    top: 25vh;
+    top: 22vh;
     left: 5vw;
     background: url("~@/assets/images/page3/left2-bg.png") no-repeat center center;
     background-size: cover;

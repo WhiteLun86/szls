@@ -51,7 +51,7 @@ export default {
         return {
             // 激活的按钮索引
             activeLeft: 0,
-            activeRight: 0,
+            activeRight: -1,
             // 左侧导航的8个元素和图标
             leftItems: [
                 { id: 1, name: "ERP", icon: require("@/assets/images/page2/l1.png") },
@@ -177,7 +177,6 @@ export default {
             } else {
                 this.activeRight = index;
             }
-
 
         }
     }
