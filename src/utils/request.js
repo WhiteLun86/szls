@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
-import router from "@/router";
+// import router from "@/router";
 import axios from "axios";
-import { removeStore } from "./store";
+// import { removeStore } from "./store";
 
 // create an axios instance
 const service = axios.create({
@@ -41,24 +41,25 @@ service.interceptors.response.use(
      */
     (response) => {
         const res = response.data;
-        // 登录成功
-        if (res.code === "0") {
-            return res;
-        }
-        // 密码错误
-        else if (res.code === "401") {
-            console.error("err:" + '登录超时，请重新登录！'); // for debug
-            removeStore({ name: "token" }); // 清空token
-            router.push("/login");
-            return Promise.reject(res);
-        }
-        // 402、403: 登录失效
-        else {
-            router.push("/login");
-            // Vue.prototype.$baseMessage(res.msg || "系统错误", "error");
-            return Promise.reject(res);
-            // return res;
-        }
+        // // 登录成功
+        // if (res.code === "0") {
+        //     return res;
+        // }
+        // // 密码错误
+        // else if (res.code === "401") {
+        //     console.error("err:" + '登录超时，请重新登录！'); // for debug
+        //     removeStore({ name: "token" }); // 清空token
+        //     router.push("/login");
+        //     return Promise.reject(res);
+        // }
+        // // 402、403: 登录失效
+        // else {
+        //     router.push("/login");
+        //     // Vue.prototype.$baseMessage(res.msg || "系统错误", "error");
+        //     return Promise.reject(res);
+        //     // return res;
+        // }
+        return res;
     },
     (error) => {
         console.error("err:" + error); // for debug

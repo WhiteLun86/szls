@@ -34,7 +34,7 @@
         <!-- 右侧导航 -->
         <div class="right-side">
             <div class="right-item"
-                :class="{ 'righjt-item-active': index === activeright, 'right-item-default': index !== activeright }"
+                :class="{ 'right-item-active': index === activeRight, 'right-item-default': index !== activeRight }"
                 v-for="(item, index) in rightItems" :key="index" @click="selectItem(item.id, index)">
                 <img :src="item.icon" alt="icon" class="item-icon-right" />
                 {{ item.name }}
@@ -51,7 +51,7 @@ export default {
         return {
             // 激活的按钮索引
             activeLeft: 0,
-            activeRight: null,
+            activeRight: 0,
             // 左侧导航的8个元素和图标
             leftItems: [
                 { id: 1, name: "ERP", icon: require("@/assets/images/page2/l1.png") },

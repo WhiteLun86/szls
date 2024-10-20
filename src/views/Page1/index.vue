@@ -557,7 +557,7 @@ export default {
     height: calc(100% - 77px); // 确保主容器的高度不会覆盖到头部
     display: grid;
     grid-template-columns: 30% 40% 30%; // 左侧25%，中间50%，右侧25%
-    grid-template-rows: repeat(4, 1fr); // 每列4行
+    grid-template-rows: repeat(4, calc(25% + 10px)); // 每列4行
     grid-row-gap: 10px; // 设置行之间的间距为20px
 
     .block-item {
