@@ -1,6 +1,18 @@
 <template>
     <div class="main-container">
         <!-- 当日入库统计(0-24点) -->
+        <div class="camera" @click="openModal()"></div>
+        <div class="camera2" @click="openModal()"></div>
+        <!-- 模态框部分 -->
+        <div v-if="showModal" class="modal" @click="closeModal">
+            <div class="modal-content" @click.stop>
+                <span class="close" @click="closeModal">&times;</span>
+                <video ref="video" controls loop>
+                    <source src="@/assets/videos/exp.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
         <div class="now-in-container block-item">
             <now-in v-if="showComponent">
                 <template #header> 能源消耗监控 </template>
@@ -21,8 +33,8 @@
 
         <!-- 近一周库存统计(数量和吨位) -->
         <div class="central-element">
-            
-            
+
+
         </div>
 
         <!-- 利用率管理 -->
@@ -82,6 +94,7 @@ export default {
     },
     data() {
         return {
+            showModal: false, // 控制模态框的显示
             // 标题
             title: "数字孪生驾驶舱",
             // 时间
@@ -174,6 +187,18 @@ export default {
         }, 1000);
     },
     methods: {
+        openModal() {
+            this.showModal = true;
+            // 确保模态框显示后播放视频
+            this.$nextTick(() => {
+                this.$refs.video.play(); // 手动启动视频播放
+            });
+        },
+        closeModal() {
+            this.showModal = false;
+            this.$refs.video.pause(); // 关闭模态框时暂停视频
+            this.$refs.video.currentTime = 0; // 重置视频时间
+        },
         // 退出登录
         handleLogout() {
             this.$confirm("退出登录?", "提示", {
@@ -549,6 +574,49 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    background: url("~@/assets/images/popup.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+video {
+    width: 100%;
+    /* 让视频自适应模态框的宽度 */
+    height: auto;
+    /* 保持视频比例 */
+    max-height: 80vh;
+    /* 确保视频高度不超过容器的最大高度 */
+    background: #000000;
+    border-radius: 5px;
+    border: 1px solid #62ADFF;
+}
+
+.modal-content {
+    position: relative;
+    padding-top: 7vh;
+
+    width: 70%;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
 .main-container {
     padding: 77px 16px 16px 16px;
     box-sizing: border-box;
@@ -566,6 +634,40 @@ export default {
         margin: 10px 14px 0;
         height: 100%; // 使每个块占满行高
         z-index: 1;
+    }
+
+    .camera {
+        position: absolute;
+        background: url("~@/assets/images/camera (2).png") no-repeat;
+        background-size: 100% 100%;
+        width: 7vw;
+        height: 7vh;
+        top: 22vh;
+        left: 66vw;
+        transition: transform 0.3s ease;
+        /* 过渡效果 */
+        cursor: pointer;
+    }
+    .camera2 {
+        position: absolute;
+        background: url("~@/assets/images/camera2 (2).png") no-repeat;
+        background-size: 100% 100%;
+        width: 2vw;
+        height: 3vh;
+        top: 42vh;
+        left: 67vw;
+        transition: transform 0.3s ease;
+        /* 过渡效果 */
+        cursor: pointer;
+    }
+
+    .camera:hover {
+        transform: scale(1.2);
+        /* 悬停时放大1.2倍 */
+    }
+    .camera2:hover {
+        transform: scale(1.2);
+        /* 悬停时放大1.2倍 */
     }
 
     // 左侧的四个块，放在第一列
