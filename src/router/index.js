@@ -6,7 +6,7 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    redirect: '/dashboard'
+    redirect: '/dashboard/page1'
   },
   {
     path: '/dashboard',

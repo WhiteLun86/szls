@@ -50,9 +50,9 @@ export default {
                     },
                 },
                 grid: {
-                    left: "1%",
-                    right: "2%",
-                    bottom: "2%",
+                    left: "4%",
+                    right: "4%",
+                    bottom: "6%",
                     top: this.nowSize(30),
                     containLabel: true,
                 },

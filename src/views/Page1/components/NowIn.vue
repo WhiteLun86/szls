@@ -89,9 +89,9 @@ export default {
                     },
                 },
                 grid: {
-                    left: "1%",
-                    right: "1%",
-                    bottom: "0%",
+                    left: "4%",
+                    right: "4%",
+                    bottom: "6%",
                     top: this.nowSize(30),
                     containLabel: true,
                 },
