@@ -25,7 +25,7 @@ const routes = [
       {
         path: 'page2',
         name: 'Page2',
-        component: () => import('@/views/Page2/index.vue')
+        component: () => import('@/views/Page2/index copy.vue')
       },
       {
         path: 'page3',
