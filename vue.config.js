@@ -5,7 +5,7 @@ function resolve(dir) {
   return path.join(__dirname, dir);
 }
 
-const name = "快景WMS系统大屏";
+const name = "数字孪生驾驶舱";
 
 // If your port is set to 80,
 // use administrator privileges to execute the command line.
