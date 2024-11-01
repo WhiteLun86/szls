@@ -2,16 +2,26 @@
   <div class="layout-container">
     <!-- 左侧导航 -->
     <div class="left-side">
-      <div class="container" v-for="(item, index) in items.slice(0, 3)" :key="index">
+      <div
+        class="container"
+        v-for="(item, index) in items.slice(0, 3)"
+        :key="index"
+      >
         <div class="header">
           {{ item.name }}
         </div>
         <div class="content">
           <template v-if="item.children && item.children.length > 0">
-            <div v-for="child in item.children" :key="child.id" @click="selectItem(child)" class="item" :class="{
-              'left-item-active': child.id === currentActive,
-              'left-item-default': child.id !== currentActive,
-            }">
+            <div
+              v-for="child in item.children"
+              :key="child.id"
+              @click="selectItem(child)"
+              class="item"
+              :class="{
+                'left-item-active': child.id === currentActive,
+                'left-item-default': child.id !== currentActive,
+              }"
+            >
               {{ child.name }}
               <img :src="child.icon" alt="icon" class="item-icon-left" />
             </div>
@@ -22,55 +32,75 @@
 
     <div class="center-content" :key="selectedItem.id">
       <div class="content-title">
-        <div style="
+        <div
+          style="
             font-family: Alibaba PuHuiTi;
             font-weight: 500;
             font-size: 3vh;
             color: rgb(255, 255, 255);
             line-height: 30px;
             padding-bottom: 1vh;
-          ">
+          "
+        >
           介绍
         </div>
       </div>
       <div class="content-left">
-        <div style="
+        <div
+          style="
             font-family: Alibaba PuHuiTi;
             font-weight: bold;
             font-size: 2vw;
             color: #59baf2;
             line-height: 32px;
-          ">
+          "
+        >
           {{ selectedItem.name }}
         </div>
-        <div style="
+        <div
+          style="
             font-family: Alibaba PuHuiTi;
             font-weight: 400;
             font-size: 1vw;
             color: #ffffff;
             opacity: 0.7;
-          ">
+          "
+        >
           {{ selectedItem.description }}
         </div>
         <div class="bottom-button">进入系统</div>
       </div>
       <div class="content-right">
-        <img :src="selectedItem.image" alt="selected image" class="selected-image" />
+        <img
+          :src="selectedItem.image"
+          alt="selected image"
+          class="selected-image"
+        />
       </div>
     </div>
 
     <!-- 右侧导航 -->
     <div class="right-side">
-      <div class="container" v-for="(item, index) in items.slice(3,)" :key="index">
+      <div
+        class="container"
+        v-for="(item, index) in items.slice(3)"
+        :key="index"
+      >
         <div class="header">
           {{ item.name }}
         </div>
         <div class="content">
           <template v-if="item.children && item.children.length > 0">
-            <div v-for="child in item.children" :key="child.id" @click="selectItem(child)" class="item" :class="{
-              'right-item-active': child.id === currentActive,
-              'right-item-default': child.id !== currentActive,
-            }">
+            <div
+              v-for="child in item.children"
+              :key="child.id"
+              @click="selectItem(child)"
+              class="item"
+              :class="{
+                'right-item-active': child.id === currentActive,
+                'right-item-default': child.id !== currentActive,
+              }"
+            >
               {{ child.name }}
               <img :src="child.icon" alt="icon" class="item-icon-left" />
             </div>
@@ -254,7 +284,6 @@ export default {
                 "ERP系统，全称为企业资源计划系统（Enterprise Resource Planning），是一个集成了企业各项业务流程的综合性管理软件。它不仅涵盖了企业的财务、人力资源、生产、采购、销售等多个部门，还涉及到了供应链管理、客户关系管理等方面。ERP系统的核心思想是通过信息技术与先进的管理思想相结合，为企业提供一个系统化的管理平台，以优化企业的资源配置和业务流程，提高企业的整体运营效率和市场竞争力。",
               image: require("@/assets/images/page2/center1.png"),
             },
-
           ],
         },
         {
@@ -326,15 +355,13 @@ export default {
           "ERP系统，全称为企业资源计划系统（Enterprise Resource Planning），是一个集成了企业各项业务流程的综合性管理软件。它不仅涵盖了企业的财务、人力资源、生产、采购、销售等多个部门，还涉及到了供应链管理、客户关系管理等方面。ERP系统的核心思想是通过信息技术与先进的管理思想相结合，为企业提供一个系统化的管理平台，以优化企业的资源配置和业务流程，提高企业的整体运营效率和市场竞争力。",
         image: require("@/assets/images/page2/center1.png"),
       },
-      
     };
   },
   methods: {
     // 选择项目时动态更新
     selectItem(item) {
-      this.currentActive = item.id
-      this.selectedItem = item
-
+      this.currentActive = item.id;
+      this.selectedItem = item;
     },
   },
 };
@@ -349,8 +376,7 @@ export default {
 .fade-enter,
 .fade-leave-to
 
-/* .fade-leave-active in <2.1.8 */
-  {
+/* .fade-leave-active in <2.1.8 */ {
   opacity: 0;
 }
 
@@ -388,7 +414,6 @@ export default {
   font-family: Alibaba PuHuiTi;
   font-weight: 400;
   font-size: 20px;
-  height: 2vh;
   color: #59baf2;
   line-height: 30px;
   border: 3px solid transparent;
@@ -428,9 +453,12 @@ export default {
 }
 
 .item {
+  width: fit-content;
   // flex: 0 0 15px;
-  margin-bottom: 5px;
-  height: 8px;
+  margin: 8px 4px 0;
+  height: 12px;
+  flex-grow: 1;
+  max-width: 50%;
 }
 
 .item:hover {
@@ -440,7 +468,7 @@ export default {
   /* 字体颜色在悬停时变白 */
   background-image: linear-gradient(to right, #2461d1, #59baf2);
   /* 改变背景颜色渐变 */
-  transform: scale(1.05);
+  transform: scale(1);
   /* 略微放大元素 */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   /* 添加阴影效果 */
@@ -468,7 +496,7 @@ export default {
   transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
   color: #ffffff;
   background-image: linear-gradient(to right, #2461d1, #59baf2);
-  transform: scale(1.05);
+  transform: scale(1);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
@@ -581,15 +609,10 @@ export default {
   }
 
   .content {
-    flex-direction: column;
-    width: 90%;
-    height: calc(100% - 47px);
-    // padding: 22px;
+    width: 100%;
     box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
     margin: auto;
   }
 }
