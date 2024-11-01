@@ -130,7 +130,7 @@ export default {
 
 <style lang="scss" scoped>
 .dashboard-wrap {
-  background: url("~@/assets/images/bg.png") no-repeat;
+  background: url("~@/assets/images/bg1.png") no-repeat;
   background-size: 100% 100%;
   position: relative;
   width: 100%;
